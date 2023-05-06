@@ -11,6 +11,14 @@ services:
     depends_on:
       - db
     container_name: django_web_server
+    environment:
+    - "DJANGO_SECRET_KEY=django-insecure-hv1(e0r@v4n4m6gqdz%dn(60o=dsy8&@0_lbs8p-v3u^bs4)xl"
+    - "DJANGO_DEBUG=True"
+    - "DATABASE_NAME=bookstore"
+    - "DATABASE_USER=SA"
+    - "DATABASE_PASSWORD=uzum@123KI"
+    - "DATABASE_HOST=db"
+    - "DATABASE_PORT=1433"
   db:
     image: mcr.microsoft.com/mssql/server:2022-latest
     container_name: sqlserver2022
