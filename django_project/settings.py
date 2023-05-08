@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # Local
     "accounts.apps.AccountsConfig",
     "pages.apps.PagesConfig",
+    "books.apps.BooksConfig",
 ]
 
 MIDDLEWARE = [
@@ -164,7 +165,6 @@ AUTHENTICATION_BACKENDS = (
     "allauth.account.auth_backends.AuthenticationBackend",
 )
 
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 ACCOUNT_SESSION_REMEMBER = True
 
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
@@ -175,4 +175,4 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 # Email
 DEFAULT_FROM_EMAIL = "admin@cocobookstore.com"
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
