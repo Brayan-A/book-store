@@ -176,3 +176,7 @@ ACCOUNT_UNIQUE_EMAIL = True
 # Email
 DEFAULT_FROM_EMAIL = "admin@cocobookstore.com"
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# Media
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
