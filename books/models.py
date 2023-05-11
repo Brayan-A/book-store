@@ -11,12 +11,16 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     cover = models.ImageField(upload_to="covers/", blank=True)
 
+    class Meta:
+        permissions = [
+            ("special_status", "Can read all books"),
+        ]
+
     def __str__(self) -> str:
-        return self.title
+        return str(self.title)
 
     def get_absolute_url(self):
         return reverse("book_detail", args=[str(self.id)])
-
 
 class Review(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="reviews")
@@ -24,4 +28,4 @@ class Review(models.Model):
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
 
     def __str__(self) -> str:
-        return self.review
+        return str(self.review)
